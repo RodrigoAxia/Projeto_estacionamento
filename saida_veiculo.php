@@ -41,8 +41,6 @@ if( $dias > 0) {
     }
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
