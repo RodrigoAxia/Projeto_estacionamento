@@ -1,0 +1,29 @@
+
+.page-item .page-link {
+    color: #ddd;
+    background-color: #222;
+    border: 1px solid #444;
+
+}
+
+
+.page-item.active .page-link {
+    background-color: #555;
+    border-color: #666;
+    color: white;
+}
+
+
+.page-item .page-link:hover {
+    background-color: #444;
+    color: white;
+    border-color: #666;
+}
+
+
+.page-item.disabled .page-link {
+    color: #777;
+    background-color: #222;
+    border-color: #333;
+    pointer-events: none;
+}
