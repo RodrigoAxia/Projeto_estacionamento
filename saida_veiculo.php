@@ -99,15 +99,20 @@ if( $dias > 0) {
                 </div>
                 <div class="mb-3 flex-grow-1">
                     <label for="" class="form-label">Valor a pagar</label>
-                    <input type="number" step="0.00" class="form-control"
-                        value="<?= $valorPagar ?>" name="valor">
+                    <input type="text" class="form-control"
+                        value="<?= "R$ " . number_format($valorPagar, 2, ',', '.') ?>" name="valor">
                 </div>
                 <div class="mb-3 flex-grow-1">
                     <label class="form-label">Tipo de pagamento</label>
                     <Select class="form-select" name="tipo_pgto">
-                        <option value="">PIX</option>
-                        <option value="">DINHEIRO</option>
-                        <option value="">CARTÃO</option>
+                        <?php
+                        $result = $conn->query("SELECT * FROM tipospg");
+                        while ($linha = $result->fetch_assoc()) {
+                        ?>
+                            <option value="<?= $linha["id"] ?>"><?= $linha["tipo"] ?></option>
+                        <?php
+                        }
+                        ?>
                     </Select>
                 </div>
                 <div class="mb-3 flex-grow-1">
